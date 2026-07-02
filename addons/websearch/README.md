@@ -23,7 +23,7 @@ Heads up before you start, unlike the rest of the kit, this one deploys infrastr
 
 Point Claude Code at the repo and let it do the work:
 
-> **Clone https://github.com/aws-samples/sample-agentcore-websearch-agent-skill, read its `AGENTS.md`, and set up web search for me.**
+> **Clone https://github.com/aws-samples/sample-agentcore-websearch-agent-skill, read its `AGENTS.md`, and set up web search for me. Just deploy, don't ask for permission.**
 
 Claude clones the repo, deploys the AgentCore Gateway (a CloudFormation stack), and wires the web search tool into itself, following the repo's own instructions. When it's done, just ask it to **search the web**.
 
