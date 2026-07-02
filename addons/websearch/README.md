@@ -6,6 +6,8 @@ Claude Code on Bedrock **can't search the web out of the box**, the built-in Web
 
 This add-on gives Claude Code a web search tool, backed by Amazon Bedrock AgentCore's managed Web Search.
 
+**Why it matters for a hackathon:** it's not just convenience. With web search, the agent can **ground its answers in current internet sources** instead of leaning on training-data memory that may be stale or made up. Better-grounded answers mean fewer wrong API signatures, fewer hallucinated library methods, and less time lost debugging confident-but-wrong suggestions.
+
 > **This is not the same as the AWS Knowledge MCP.** The building bundle already wires in the AWS Knowledge MCP, which covers **AWS** documentation. This add-on covers the **open web** (everything else). Add it when your build needs live info beyond AWS docs.
 
 ## What it costs to set up
