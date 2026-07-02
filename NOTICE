@@ -5,12 +5,18 @@ This repository bundles or references third-party components. Their licenses
 are reproduced below and/or alongside the component.
 
 --------------------------------------------------------------------------
-1. grill-me skill (bundles/hackathon/skills/grill-me/)
+1. Skills from mattpocock/skills (MIT)
 --------------------------------------------------------------------------
-Adapted from mattpocock/skills (https://github.com/mattpocock/skills),
-the "grill-me" skill. Licensed under the MIT License.
-The full MIT license text is reproduced in:
-    bundles/hackathon/skills/grill-me/LICENSE
+The following skills are based on or adapted from mattpocock/skills
+(https://github.com/mattpocock/skills), licensed under the MIT License.
+The full MIT text is reproduced in each skill's folder as LICENSE.
+
+  - bundles/hackathon/skills/grill-me/    (adapted)
+  - bundles/hackathon/skills/to-issues/   (adapted: hardcoded local issue
+                                           tracker, stripped setup-skill
+                                           dependency and heavyweight
+                                           conventions)
+  - bundles/hackathon/skills/handoff/     (unmodified)
 
 --------------------------------------------------------------------------
 2. AgentCore Web Search add-on (addons/websearch/)
