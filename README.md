@@ -26,4 +26,4 @@ addons/websearch/   Optional: give the agent web search (Bedrock has none built 
 
 - Install details, troubleshooting, region and model notes → [`install/README.md`](install/README.md)
 - Running the workshop? Each bundle has a `docs/` facilitator playbook.
-- License: MIT ([`LICENSE`](LICENSE)) · third-party notices in [`NOTICE`](NOTICE)
+- License: MIT-0 ([`LICENSE`](LICENSE)) · third-party notices in [`NOTICE`](NOTICE)

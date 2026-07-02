@@ -21,4 +21,4 @@ Attendee setup lives in the bundle [README](../README.md): install the agent, ad
 ## What this bundle does NOT do
 
 - It doesn't deploy the workshop infrastructure. That's the workshop's own job.
-- It doesn't pin models. See [`../../install/README.md`](../../install/README.md).
+- It doesn't pin models. See the [install guide](../../../install/README.md).

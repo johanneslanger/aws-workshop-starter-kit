@@ -6,7 +6,7 @@ A short playbook for facilitators running a **team** build-from-scratch workshop
 
 1. Decide whether teams start from an empty repo or a light scaffold you provide.
 2. Test the flow yourself: install the agent, copy `AGENTS.md`/`CLAUDE.md`/`.mcp.json` into a project, run `claude`, confirm the AWS Knowledge MCP connects (`/mcp` lists tools), and do a quick `grill-me` → `to-issues` pass.
-3. Decide if you want the web-search add-on (needs us-east-1, deploys infra). See [`../../addons/websearch/`](../../addons/websearch/).
+3. Decide if you want the web-search add-on (needs us-east-1, deploys infra). See the [web-search add-on](../../../addons/websearch/).
 4. Set team size to ~3-5. Each team shares one repo.
 
 ## What each team does
@@ -28,7 +28,7 @@ A short playbook for facilitators running a **team** build-from-scratch workshop
 ## What this bundle does NOT do
 
 - It doesn't scaffold a specific app, teams bring their own idea.
-- It doesn't pin models. See [`../../install/README.md`](../../install/README.md).
+- It doesn't pin models. See the [install guide](../../../install/README.md).
 
 ## Maintainer notes
 
