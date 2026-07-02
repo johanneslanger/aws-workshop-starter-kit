@@ -22,7 +22,7 @@ Each path's README starts with installing the agent (a one-line script), then ta
 install/            Install the agent (Claude Code) + wire it to Bedrock — shared by both paths
 bundles/guided/     Learning path: notebook tutor
 bundles/building/   Hackathon path: mob-grill → slice → divide → build, as a team
-addons/websearch/   Optional: live web search
+addons/websearch/   Optional: give the agent web search (Bedrock has none built in)
 ```
 
 ## More

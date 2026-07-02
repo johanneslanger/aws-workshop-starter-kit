@@ -35,6 +35,10 @@ A **team** builds something from scratch, with an AI coding agent as an extra pa
 
 grill-me, to-issues, and handoff are based on / adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). See [`../../NOTICE`](../../NOTICE).
 
+## Optional: give the agent web search
+
+Claude Code on Bedrock **can't search the web by default** (the built-in web search isn't available on Bedrock). The pre-wired **AWS Knowledge MCP** already covers AWS documentation, if your build also needs the *open* web (library docs, error messages, changelogs), add a web search tool. See [`../../addons/websearch/`](../../addons/websearch/). It deploys a small piece of infra (us-east-1, ~$7/1k queries), so it's opt-in.
+
 ---
 
-Optional: [live web search](../../addons/websearch/) · Running this as a facilitator? See [`docs/`](docs/).
+Running this as a facilitator? See [`docs/`](docs/).

@@ -1,29 +1,36 @@
-# Add-on: Web search for Claude Code on Bedrock
+# Add web search to Claude Code
 
-Claude Code on Bedrock has **no built-in WebSearch tool** ([docs](https://docs.claude.com/en/docs/claude-code/amazon-bedrock)). If your workshop needs the agent to search the live web, add the AgentCore Web Search tool.
+## Why you'd want this
 
-We don't vendor the code here, it's maintained upstream. Point Claude Code (or the attendee) at the sample and follow its own instructions:
+Claude Code on Bedrock **can't search the web out of the box**, the built-in WebSearch tool isn't available on Bedrock ([docs](https://docs.claude.com/en/docs/claude-code/amazon-bedrock)). So by default the agent can't look anything up online: library docs, error messages, changelogs, current APIs, anything outside its training data.
 
-> **Repo:** [`aws-samples/sample-agentcore-websearch-agent-skill`](https://github.com/aws-samples/sample-agentcore-websearch-agent-skill) (MIT-0)
->
-> Easiest install: tell Claude Code to clone that repo and follow its `AGENTS.md`.
+This add-on gives Claude Code a web search tool, backed by Amazon Bedrock AgentCore's managed Web Search.
 
-## Before you enable it — read this
+> **This is not the same as the AWS Knowledge MCP.** The building bundle already wires in the AWS Knowledge MCP, which covers **AWS** documentation. This add-on covers the **open web** (everything else). Add it when your build needs live info beyond AWS docs.
 
-This add-on is heavier than the rest of the kit. Attendees should know what they're opting into:
+## What it costs to set up
 
-- **It deploys infrastructure.** Following the repo runs `aws cloudformation deploy --capabilities CAPABILITY_IAM`, creating an AgentCore Gateway + IAM role in the account. If you have Claude Code run it, Claude Code is executing that deploy, make sure the attendee is aware.
-- **us-east-1.** The managed Web Search capability lives in `us-east-1`, so the gateway must be deployed there. Simplest when your workshop runs in us-east-1. (Cross-region calling is technically possible but out of scope for this kit.)
-- **It costs money:** ~$7 per 1,000 queries, billed to the workshop account.
-- It's an AWS **sample**, explicitly "not for production."
+Heads up before you start, unlike the rest of the kit, this one deploys infrastructure:
 
-## Two ways to wire it into Claude Code
+- **Deploys an AgentCore Gateway + IAM role** via CloudFormation (`--capabilities CAPABILITY_IAM`).
+- **us-east-1 only** — the managed Web Search capability lives there. Simplest when your workshop runs in us-east-1.
+- **~$7 per 1,000 queries**, billed to the account.
+- It's an AWS **sample**, explicitly not for production.
 
-Both come from the upstream repo after you deploy the gateway:
+## How to install
 
-- **Skill:** `cp -r skills/agentcore-websearch ~/.claude/skills/` (needs the repo's CLI installed).
-- **MCP server (simplest):** `claude mcp add agentcore-websearch -- uvx mcp-proxy-for-aws "$GATEWAY_URL" --region us-east-1`
+Easiest path: tell Claude Code to clone the sample repo and follow its own instructions.
 
-Then ask Claude Code to "search the web with agentcore."
+> Clone [`aws-samples/sample-agentcore-websearch-agent-skill`](https://github.com/aws-samples/sample-agentcore-websearch-agent-skill) (MIT-0) and follow its `AGENTS.md`. It deploys the gateway, then wires the tool into Claude Code.
 
-See the upstream repo's `README.md` and `AGENTS.md` for the full deploy/teardown steps.
+Both ways to connect it come from that repo, after the gateway is deployed:
+
+- **As an MCP server (simplest):**
+  ```bash
+  claude mcp add agentcore-websearch -- uvx mcp-proxy-for-aws "$GATEWAY_URL" --region us-east-1
+  ```
+- **As a skill:** `cp -r skills/agentcore-websearch ~/.claude/skills/` (needs the repo's CLI installed)
+
+Then ask the agent to "search the web with agentcore."
+
+We don't vendor the code here on purpose, it's maintained upstream, so you always follow the current instructions.
