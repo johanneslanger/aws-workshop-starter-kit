@@ -1,34 +1,31 @@
-# Workshop Starter Kit — Claude Code on Amazon Bedrock
+# Workshop Starter Kit — AI-agent-powered AWS workshops
 
-Get [Claude Code](https://docs.claude.com/en/docs/claude-code) running in your AWS workshop in about two minutes, powered by Amazon Bedrock. No API keys, it uses the credentials your workshop account already has.
+A starter kit for running AWS workshops where participants work alongside an AI coding agent (Claude Code on Amazon Bedrock). Pick the style that matches your workshop, each path has its own short setup.
 
-## Get started
+## Two workshop styles
 
-**1. Clone this repo** in your workshop terminal (JupyterLab or the Code Editor instance):
+### 🎓 Guided — learning
+Work through pre-built notebooks and code at your own pace. The agent becomes a **tutor** that reads the workshop and teaches it, one notebook at a time. Individual-first.
 
-```bash
-git clone <repo-url> && cd workshop-starter-kit
+→ [`bundles/guided/`](bundles/guided/)
+
+### 🛠️ Building — hackathon
+A **team** builds something from scratch. The group aligns on what to build, mob-grills the agent to a shared understanding, slices the work into independent pieces, and divides them.
+
+→ [`bundles/building/`](bundles/building/)
+
+Each path's README starts with installing the agent (a one-line script), then takes it from there.
+
+## What's in the box
+
 ```
-
-**2. Install Claude Code:**
-
-```bash
-bash install/install-claude-code.sh
+install/            Install the agent (Claude Code) + wire it to Bedrock — shared by both paths
+bundles/guided/     Learning path: notebook tutor
+bundles/building/   Hackathon path: mob-grill → slice → divide → build, as a team
+addons/websearch/   Optional: live web search
 ```
-
-Then start it with `claude`. (First run may take a moment.)
-
-**3. Pick your workshop type** and follow that bundle's short setup:
-
-| Your workshop is… | Go to | What you get |
-|---|---|---|
-| **Notebook / learning** | [`bundles/guided/`](bundles/guided/) | A tutor that walks you through the notebooks |
-| **Hackathon / builder** | [`bundles/hackathon/`](bundles/hackathon/) | Build-mode setup, AWS docs on tap, an idea stress-tester |
-
-That's it.
 
 ## More
 
 - Install details, troubleshooting, region and model notes → [`install/README.md`](install/README.md)
-- Optional live web search → [`addons/websearch/`](addons/websearch/)
 - License: MIT ([`LICENSE`](LICENSE)) · third-party notices in [`NOTICE`](NOTICE)
