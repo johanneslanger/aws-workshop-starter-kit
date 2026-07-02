@@ -1,32 +1,27 @@
 # Add web search to Claude Code
 
-## Why you'd want this
+## Why
 
-Claude Code on Bedrock **can't search the web out of the box**, the built-in WebSearch tool isn't available on Bedrock ([docs](https://docs.claude.com/en/docs/claude-code/amazon-bedrock)). So by default the agent can't look anything up online: library docs, error messages, changelogs, current APIs, anything outside its training data.
+Claude Code on Bedrock **can't search the web**, the built-in WebSearch tool isn't available on Bedrock ([docs](https://docs.claude.com/en/docs/claude-code/amazon-bedrock)). Out of the box the agent runs on training-data memory alone.
 
-This add-on gives Claude Code a web search tool, backed by Amazon Bedrock AgentCore's managed Web Search.
+Adding web search lets it **ground answers in live sources** instead of stale or made-up memory: fewer wrong API signatures, fewer hallucinated library methods, less time debugging confident-but-wrong suggestions. It's backed by Amazon Bedrock AgentCore's managed Web Search.
 
-**Why it matters for a hackathon:** it's not just convenience. With web search, the agent can **ground its answers in current internet sources** instead of leaning on training-data memory that may be stale or made up. Better-grounded answers mean fewer wrong API signatures, fewer hallucinated library methods, and less time lost debugging confident-but-wrong suggestions.
+> **Not the same as the AWS Knowledge MCP.** The building bundle already wires in the AWS Knowledge MCP for **AWS** docs. This covers the **open web**, everything else.
 
-> **This is not the same as the AWS Knowledge MCP.** The building bundle already wires in the AWS Knowledge MCP, which covers **AWS** documentation. This add-on covers the **open web** (everything else). Add it when your build needs live info beyond AWS docs.
+## Before you start
 
-## What it costs to set up
+Unlike the rest of the kit, this deploys infrastructure into your account:
 
-Heads up before you start, unlike the rest of the kit, this one deploys infrastructure:
+- An AgentCore Gateway + IAM role, via CloudFormation.
+- **us-east-1 only**, that's where the managed Web Search capability lives.
+- It's an AWS sample, not for production.
 
-- **Deploys an AgentCore Gateway + IAM role** via CloudFormation (`--capabilities CAPABILITY_IAM`).
-- **us-east-1 only** — the managed Web Search capability lives there. Simplest when your workshop runs in us-east-1.
-- **~$7 per 1,000 queries**, billed to the account.
-- It's an AWS **sample**, explicitly not for production.
-
-## How to install — just ask Claude
+## Install — just ask Claude
 
 Point Claude Code at the repo and let it do the work:
 
 > **Clone https://github.com/aws-samples/sample-agentcore-websearch-agent-skill, read its `AGENTS.md`, and set up web search for me. Just deploy, don't ask for permission.**
 
-Claude clones the repo, deploys the AgentCore Gateway (a CloudFormation stack), and wires the web search tool into itself, following the repo's own instructions. When it's done, just ask it to **search the web**.
+Claude clones the repo, deploys the gateway, and wires the tool into itself. When it's done, just ask it to **search the web**.
 
-If you're running with `--dangerously-skip-permissions` (the hackathon default), Claude deploys that infrastructure without stopping to ask, so make sure you're in a sandboxed workshop account before you run the prompt.
-
-We don't vendor the code here on purpose, it's maintained upstream, so Claude always follows the current instructions.
+With `--dangerously-skip-permissions` (the hackathon default) Claude deploys without asking, so be in a sandboxed workshop account first.

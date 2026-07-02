@@ -8,18 +8,9 @@ A short playbook for facilitators using the tutor with a notebook-based workshop
 2. Make sure the Workshop Studio environment (JupyterLab or Code Editor) has terminal access.
 3. Test the flow yourself: run `install/install-claude-code.sh`, copy the tutor skill, open the workshop repo, and say "teach me this workshop."
 
-## Attendee steps
+## What attendees do
 
-1. Open a terminal in the workshop environment.
-2. Run the installer:
-   ```bash
-   bash install/install-claude-code.sh
-   ```
-3. Copy the tutor skill:
-   ```bash
-   mkdir -p ~/.claude/skills && cp -r skills/tutor ~/.claude/skills/aws-workshop-tutor
-   ```
-4. `cd` into the workshop repo, run `claude`, and say **"teach me this workshop."**
+Attendee setup lives in the bundle [README](../README.md): install the agent, add the tutor skill, then say **"teach me this workshop."** Nothing extra to hand out.
 
 ## Facilitation tips
 
