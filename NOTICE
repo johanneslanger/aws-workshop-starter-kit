@@ -11,12 +11,16 @@ The following skills are based on or adapted from mattpocock/skills
 (https://github.com/mattpocock/skills), licensed under the MIT License.
 The full MIT text is reproduced in each skill's folder as LICENSE.
 
-  - bundles/hackathon/skills/grill-me/    (adapted)
-  - bundles/hackathon/skills/to-issues/   (adapted: hardcoded local issue
-                                           tracker, stripped setup-skill
-                                           dependency and heavyweight
-                                           conventions)
-  - bundles/hackathon/skills/handoff/     (unmodified)
+  - bundles/building/skills/grill-me/    (adapted)
+  - bundles/building/skills/to-prd/      (adapted: writes a short local PRD;
+                                          dropped issue-tracker/label/glossary/
+                                          ADR conventions)
+  - bundles/building/skills/to-issues/   (adapted: hardcoded local issue
+                                          tracker, stripped setup-skill
+                                          dependency and heavyweight
+                                          conventions)
+  - bundles/building/skills/handoff/     (adapted: writes to a repo handoffs/
+                                          directory instead of the OS temp dir)
 
 --------------------------------------------------------------------------
 2. AgentCore Web Search add-on (addons/websearch/)

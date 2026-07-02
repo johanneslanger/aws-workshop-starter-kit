@@ -21,17 +21,19 @@ A **team** builds something from scratch, with an AI coding agent as an extra pa
 
 1. **Argue it out.** As a group, discuss what you actually want to build. Just enough to have something to grill, don't over-plan.
 2. **Mob-grill.** Gather around one screen. One person drives Claude Code and runs **`grill-me`**; the agent interviews the *group* until you all share the same picture of what you're building. Disagreements surface in the room, not in hour three. (Rotate the driver if you like, optional.)
-3. **Slice it.** Run **`to-issues`**. The agent breaks the agreed build into independent vertical slices, one file per slice, in a local `issues/` folder.
-4. **Divide and build.** Each person grabs an unblocked issue (one file each, so nobody collides), splits off, and builds that slice end-to-end with the agent.
-5. **Hand off and integrate.** Use **`handoff`** when a session gets long or you pass work to a teammate, it compacts the state so a fresh session picks up from the issues.
+3. **Write the PRD.** Run **`to-prd`**. It turns the grilled agreement into a short `PRD.md`, problem, solution, key decisions, user stories. This is your shared source of truth.
+4. **Slice it.** Run **`to-issues`**. It slices the PRD into independent vertical slices, one file per slice in a local `issues/` folder, each referencing the PRD so every slice carries its context.
+5. **Divide and build.** Each person grabs an unblocked issue (one file each, so nobody collides), splits off, and builds that slice end-to-end with the agent.
+6. **Hand off and integrate.** Use **`handoff`** when a session gets long or you pass work to a teammate, it writes a pickup doc into `handoffs/` in the repo so a fresh session (or teammate) continues from the PRD and issues.
 
 ## You get
 
 - **AGENTS.md / CLAUDE.md** — team build conventions the agent follows (shared repo, claim a slice, keep slices independent)
 - **.mcp.json** — AWS Knowledge MCP, live AWS docs instead of guesswork (no auth, no cost)
 - **grill-me** — mob-grill the group to a shared understanding of what to build
-- **to-issues** — slice the plan into independently-grabbable local issues
-- **handoff** — compact a long session so another person or agent continues cleanly
+- **to-prd** — write that agreement up as a short `PRD.md` (problem, solution, key decisions, user stories)
+- **to-issues** — slice the PRD into independently-grabbable local issues that reference it
+- **handoff** — write a pickup doc into `handoffs/` so another person or agent continues cleanly
 
 grill-me, to-issues, and handoff are based on / adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). See [`../../NOTICE`](../../NOTICE).
 

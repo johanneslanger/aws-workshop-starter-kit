@@ -13,10 +13,10 @@ A short playbook for facilitators running a **team** build-from-scratch workshop
 
 1. Everyone installs the agent (see the bundle [README](../README.md)).
 2. The team discusses what they want to build.
-3. **Mob-grill:** one driver, shared screen, run `grill-me` until the group agrees on what they're building.
-4. `to-issues` slices the agreement into the local `issues/` folder.
+3. **Mob-grill:** one driver, shared screen, run `grill-me` until the group agrees.
+4. `to-prd` writes the agreement to `PRD.md`; `to-issues` slices it into `issues/`.
 5. Members divide the slices and build in parallel, one issue each.
-6. `handoff` passes context between people or sessions.
+6. `handoff` writes pickup docs into `handoffs/` to pass context between people or sessions.
 
 ## Facilitation tips
 

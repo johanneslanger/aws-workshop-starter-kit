@@ -24,7 +24,8 @@ Instructions for the coding agent during a hackathon-style workshop where a **te
 
 ## Before you build
 
-- If the idea is fuzzy, mob-grill it with **grill-me** as a group first, then **to-issues** to slice it. Ten minutes of alignment saves hours of rework and merge pain.
+- Align first: mob-grill the idea with **grill-me**, write it up with **to-prd** (a short `PRD.md`), then **to-issues** to slice the PRD. Ten minutes of alignment saves hours of rework and merge pain.
+- Build against `PRD.md` and the `issues/` files, they're the shared source of truth.
 
 ## Testing
 
