@@ -25,7 +25,8 @@ The first time, Claude Code walks you through a short setup. Choose these option
 1. At the login prompt → **3rd-party platform**
 2. → **Amazon Bedrock**
 3. For authentication → **credentials already in your environment** (a workshop account sets these for you). On your own account, pick the AWS profile or access key you normally use.
-4. Claude Code detects your region and the models your account can invoke, that's it, you're in.
+4. Let Claude Code **auto-detect the available models**, it lists the models your account can invoke in your region, so you don't hand-pick IDs.
+5. When it offers the **1M-token context window**, take it. Long hackathon and tutor sessions run much further before they have to compact. (See the 1M note below for which models support it.)
 
 You only do this once; Claude Code remembers it. Re-run the setup anytime with `/setup-bedrock`.
 
@@ -37,6 +38,12 @@ You only do this once; Claude Code remembers it. Re-run the setup anytime with `
 <summary>"Model not available" / your workshop isn't in the US</summary>
 
 The wizard verifies which models your account can invoke and adapts to your region, so this usually just works. If a model looks missing, make sure Anthropic models are enabled in the Bedrock console for your account and region.
+</details>
+
+<details>
+<summary>1M-token context window</summary>
+
+The wizard offers a 1M context option when it pins models, worth taking for long sessions. Supported on **Claude Sonnet 4.6**, **Opus 4.6 and later**, and **Sonnet 5** (Sonnet 5 always runs at 1M via the Mantle endpoint, with no variant to select). If you pin a model by hand instead, append `[1m]` to the model ID to enable it.
 </details>
 
 <details>
