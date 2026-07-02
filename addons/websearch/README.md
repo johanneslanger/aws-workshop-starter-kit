@@ -21,7 +21,7 @@ Heads up before you start, unlike the rest of the kit, this one deploys infrastr
 
 ## How to install — just ask Claude
 
-You don't run any setup scripts yourself. Point Claude Code at the repo and let it do the work:
+Point Claude Code at the repo and let it do the work:
 
 > **Clone https://github.com/aws-samples/sample-agentcore-websearch-agent-skill, read its `AGENTS.md`, and set up web search for me.**
 
