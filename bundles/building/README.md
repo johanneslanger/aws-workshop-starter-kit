@@ -10,7 +10,12 @@ A **team** builds something from scratch, with an AI coding agent as an extra pa
    cp bundles/building/AGENTS.md bundles/building/CLAUDE.md bundles/building/.mcp.json /path/to/your/project/
    mkdir -p ~/.claude/skills && cp -r bundles/building/skills/* ~/.claude/skills/
    ```
-3. Run `claude` from the project.
+3. Run the agent. In a **disposable workshop environment**, skip permission prompts so it moves at hackathon speed:
+   ```bash
+   claude --dangerously-skip-permissions
+   ```
+
+> **When `--dangerously-skip-permissions` is OK.** It lets the agent run commands and edit files without stopping to ask, exactly what you want for hackathon flow. Use it **only in a throwaway workshop environment** (a Workshop Studio instance or a container that gets torn down). The flag governs the *machine the agent runs on*, not just your AWS account, so **don't use it on your own laptop**, run plain `claude` there, or use [auto mode](https://docs.claude.com/en/docs/claude-code/permission-modes) for fewer prompts with a safety classifier still in the loop. Claude Code refuses the flag when run as root, so launch as a non-root user.
 
 ## The team flow (a suggestion, not a rulebook)
 
