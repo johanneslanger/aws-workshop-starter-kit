@@ -1,0 +1,21 @@
+Workshop Starter Kit — Third-Party Notices
+==========================================
+
+This repository bundles or references third-party components. Their licenses
+are reproduced below and/or alongside the component.
+
+--------------------------------------------------------------------------
+1. grill-me skill (bundles/hackathon/skills/grill-me/)
+--------------------------------------------------------------------------
+Adapted from mattpocock/skills (https://github.com/mattpocock/skills),
+the "grill-me" skill. Licensed under the MIT License.
+The full MIT license text is reproduced in:
+    bundles/hackathon/skills/grill-me/LICENSE
+
+--------------------------------------------------------------------------
+2. AgentCore Web Search add-on (addons/websearch/)
+--------------------------------------------------------------------------
+This kit does not vendor the code. It references, at clone time, the sample:
+    aws-samples/sample-agentcore-websearch-agent-skill
+    https://github.com/aws-samples/sample-agentcore-websearch-agent-skill
+Licensed under MIT-0 (no attribution required). See that repository's LICENSE.
