@@ -19,6 +19,10 @@ Turns Claude Code into a tutor that reads your workshop and walks you through th
 
 The tutor frames each notebook, lets you work through it, answers questions as you go, and gives you a quick comprehension check before the next one.
 
+## Want to add web search to Claude?
+
+Bedrock's Claude Code can't search the web out of the box. If your workshop needs it, it's a quick optional add-on, see [`../../addons/websearch/`](../../addons/websearch/).
+
 ---
 
-Optional: [live web search](../../addons/websearch/) · Running this as a facilitator? See [`docs/`](docs/).
+Running this as a facilitator? See [`docs/`](docs/).

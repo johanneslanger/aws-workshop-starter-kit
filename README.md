@@ -1,20 +1,17 @@
 # Workshop Starter Kit — AI-agent-powered AWS workshops
 
-A starter kit for running AWS workshops where participants work alongside an AI coding agent (Claude Code on Amazon Bedrock). Pick the style that matches your workshop, each path has its own short setup.
+Run AWS workshops where participants work alongside an AI coding agent (Claude Code on Amazon Bedrock). Two ready-to-use setups: a **guided** notebook tutor, and a **building** hackathon flow for teams.
 
-## Two workshop styles
+## Get started
 
-### 🎓 Guided — learning
-Work through pre-built notebooks and code at your own pace. The agent becomes a **tutor** that reads the workshop and teaches it, one notebook at a time. Individual-first.
-
-→ [`bundles/guided/`](bundles/guided/)
-
-### 🛠️ Building — hackathon
-A **team** builds something from scratch. The group aligns on what to build, mob-grills the agent to a shared understanding, slices the work into independent pieces, and divides them.
-
-→ [`bundles/building/`](bundles/building/)
-
-Each path's README starts with installing the agent (a one-line script), then takes it from there.
+1. **Get the files.** Open a terminal in your workshop environment (in JupyterLab or the Code Editor instance, look for **Terminal**), and type:
+   ```bash
+   git clone https://github.com/johanneslanger/aws-workshop-starter-kit.git
+   cd aws-workshop-starter-kit
+   ```
+2. **Open the README for your workshop style** and follow its setup:
+   - 🎓 **Guided — learning:** work through notebooks with an agent tutor, at your own pace. → [`bundles/guided/`](bundles/guided/)
+   - 🛠️ **Building — hackathon:** a team builds from scratch: align → mob-grill → slice → divide → build. → [`bundles/building/`](bundles/building/)
 
 ## What's in the box
 
@@ -28,4 +25,5 @@ addons/websearch/   Optional: give the agent web search (Bedrock has none built 
 ## More
 
 - Install details, troubleshooting, region and model notes → [`install/README.md`](install/README.md)
+- Running the workshop? Each bundle has a `docs/` facilitator playbook.
 - License: MIT ([`LICENSE`](LICENSE)) · third-party notices in [`NOTICE`](NOTICE)
