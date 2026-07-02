@@ -4,7 +4,7 @@ Turns Claude Code into a tutor that reads your workshop and walks you through th
 
 ## Setup
 
-1. Install Claude Code first (from the repo root): `bash install/install-claude-code.sh`
+1. Set up the agent (one time): follow [`../../install/`](../../install/), a one-line install, then pick **Amazon Bedrock** in the first-run wizard.
 2. Add the tutor skill:
    ```bash
    mkdir -p ~/.claude/skills && cp -r bundles/guided/skills/tutor ~/.claude/skills/aws-workshop-tutor

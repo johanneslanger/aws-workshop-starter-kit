@@ -2,55 +2,53 @@
 
 Works off the temporary AWS credentials your workshop account already has. No API key.
 
-## Install
+## 1. Install Claude Code
 
 In your workshop terminal:
 
 ```bash
 bash install/install-claude-code.sh
+```
+
+(Or directly: `curl -fsSL https://claude.ai/install.sh | bash`.)
+
+## 2. Connect it to Bedrock (first-run wizard)
+
+Start the agent:
+
+```bash
 claude
 ```
 
-The script installs Claude Code, points it at Bedrock, and sets your region. Start `claude` and you're in.
+The first time, Claude Code walks you through a short setup. Choose these options in order:
 
-Prefer to install by hand (or want to pick a specific model)? Use the wizard:
+1. At the login prompt → **3rd-party platform**
+2. → **Amazon Bedrock**
+3. For authentication → **credentials already in your environment** (a workshop account sets these for you). On your own account, pick the AWS profile or access key you normally use.
+4. Claude Code detects your region and the models your account can invoke, that's it, you're in.
 
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-claude   # then choose: 3rd-party platform → Amazon Bedrock
-```
-
-The wizard detects your region and the models your account can invoke, and pins them for you. Re-run it anytime with `/setup-bedrock`.
+You only do this once; Claude Code remembers it. Re-run the setup anytime with `/setup-bedrock`.
 
 ---
 
 ## Troubleshooting & advanced
 
 <details>
-<summary>Using zsh instead of bash</summary>
-
-The script appends two `export` lines to `~/.bashrc`. On zsh, copy them into `~/.zshrc`.
-</details>
-
-<details>
 <summary>"Model not available" / your workshop isn't in the US</summary>
 
-Claude Code's built-in default is a **US** (`us.`) cross-region inference profile. In an `eu-*` or `ap-*` account it may not be invocable, so the startup model check fails. Fix either way:
-
-- Run `claude` and let the wizard pick a region-appropriate model, or
-- Export a regional override, e.g. `export ANTHROPIC_DEFAULT_SONNET_MODEL='eu.anthropic.claude-sonnet-4-6'` (use a model ID enabled in your account).
+The wizard verifies which models your account can invoke and adapts to your region, so this usually just works. If a model looks missing, make sure Anthropic models are enabled in the Bedrock console for your account and region.
 </details>
 
 <details>
 <summary>Why the kit pins no model IDs</summary>
 
-On purpose, so it never goes stale. Claude Code ships its own current Bedrock default and verifies availability at startup (falling back if needed). The login wizard discovers what's available per account and region. Nothing here to keep up to date.
+On purpose, so it never goes stale. The wizard discovers the models available in your account and region at setup time, and Claude Code advances its own defaults as it updates. Nothing here to keep up to date.
 </details>
 
 <details>
 <summary>Sonnet 5</summary>
 
-Served through the separate **Mantle** endpoint (`CLAUDE_CODE_USE_MANTLE=1`, `anthropic.claude-sonnet-5` ID format) and requires account allowlisting. An advanced opt-in, not the workshop default.
+Served through the separate **Mantle** endpoint (`CLAUDE_CODE_USE_MANTLE=1`) and requires account allowlisting. An advanced opt-in, not the workshop default.
 </details>
 
 <details>
@@ -58,6 +56,20 @@ Served through the separate **Mantle** endpoint (`CLAUDE_CODE_USE_MANTLE=1`, `an
 
 - Anthropic models enabled in Bedrock for your account.
 - IAM: `bedrock:InvokeModel`, `bedrock:InvokeModelWithResponseStream`, `bedrock:ListInferenceProfiles`, `bedrock:GetInferenceProfile`.
+</details>
+
+<details>
+<summary>Skip the wizard (fully scripted setup)</summary>
+
+For an unattended setup, export the Bedrock env vars in the shell **before** running `claude`, then it goes straight to Bedrock with no wizard:
+
+```bash
+export CLAUDE_CODE_USE_BEDROCK=1
+export AWS_REGION=us-east-1   # your workshop region
+claude
+```
+
+These must be set in the same shell that runs `claude`. Writing them to `~/.bashrc` only affects **new** terminals, that's why running the install script and then `claude` in the same shell still shows the wizard.
 </details>
 
 Sources: [Claude Code setup](https://docs.claude.com/en/docs/claude-code/setup) · [Claude Code on Amazon Bedrock](https://docs.claude.com/en/docs/claude-code/amazon-bedrock)

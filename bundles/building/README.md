@@ -4,7 +4,7 @@ A **team** builds something from scratch, with an AI coding agent as an extra pa
 
 ## Setup (once per person)
 
-1. Install the agent (from the repo root): `bash install/install-claude-code.sh`
+1. Set up the agent (one time): follow [`../../install/`](../../install/), a one-line install, then pick **Amazon Bedrock** in the first-run wizard.
 2. Copy the config into your team's project and add the skills:
    ```bash
    cp bundles/building/AGENTS.md bundles/building/CLAUDE.md bundles/building/.mcp.json /path/to/your/project/
