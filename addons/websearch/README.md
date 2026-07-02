@@ -33,6 +33,6 @@ Both ways to connect it come from that repo, after the gateway is deployed:
   ```
 - **As a skill:** `cp -r skills/agentcore-websearch ~/.claude/skills/` (needs the repo's CLI installed)
 
-Then ask the agent to "search the web with agentcore."
+Then just ask the agent to **search the web**, no need to name the tool.
 
 We don't vendor the code here on purpose, it's maintained upstream, so you always follow the current instructions.
