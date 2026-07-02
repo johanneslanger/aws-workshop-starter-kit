@@ -19,20 +19,14 @@ Heads up before you start, unlike the rest of the kit, this one deploys infrastr
 - **~$7 per 1,000 queries**, billed to the account.
 - It's an AWS **sample**, explicitly not for production.
 
-## How to install
+## How to install — just ask Claude
 
-Easiest path: tell Claude Code to clone the sample repo and follow its own instructions.
+You don't run any setup scripts yourself. Point Claude Code at the repo and let it do the work:
 
-> Clone [`aws-samples/sample-agentcore-websearch-agent-skill`](https://github.com/aws-samples/sample-agentcore-websearch-agent-skill) (MIT-0) and follow its `AGENTS.md`. It deploys the gateway, then wires the tool into Claude Code.
+> **Clone https://github.com/aws-samples/sample-agentcore-websearch-agent-skill, read its `AGENTS.md`, and set up web search for me.**
 
-Both ways to connect it come from that repo, after the gateway is deployed:
+Claude clones the repo, deploys the AgentCore Gateway (a CloudFormation stack), and wires the web search tool into itself, following the repo's own instructions. When it's done, just ask it to **search the web**.
 
-- **As an MCP server (simplest):**
-  ```bash
-  claude mcp add agentcore-websearch -- uvx mcp-proxy-for-aws "$GATEWAY_URL" --region us-east-1
-  ```
-- **As a skill:** `cp -r skills/agentcore-websearch ~/.claude/skills/` (needs the repo's CLI installed)
+If you're running with `--dangerously-skip-permissions` (the hackathon default), Claude deploys that infrastructure without stopping to ask, so make sure you're in a sandboxed workshop account before you run the prompt.
 
-Then just ask the agent to **search the web**, no need to name the tool.
-
-We don't vendor the code here on purpose, it's maintained upstream, so you always follow the current instructions.
+We don't vendor the code here on purpose, it's maintained upstream, so Claude always follows the current instructions.
