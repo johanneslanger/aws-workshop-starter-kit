@@ -5,9 +5,6 @@ description: Stress-test a plan or design by interviewing you relentlessly until
 
 # Grill Me
 
-> Adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (grill-me),
-> MIT licensed (see `LICENSE` in this folder). Modified for AWS workshop / hackathon use.
-
 ## Overview
 
 Interview the builder about every aspect of their plan or design until reaching shared understanding. Walk down each branch of the decision tree, resolving dependencies between decisions one at a time. In a hackathon, this is the "think before you build" step, it catches the load-bearing assumptions before code gets written.

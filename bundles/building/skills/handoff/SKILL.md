@@ -5,10 +5,6 @@ argument-hint: "What will the next session be used for?"
 disable-model-invocation: true
 ---
 
-> Adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (handoff),
-> MIT licensed (see `LICENSE` in this folder). Modified for team hackathon use: writes
-> the handoff into the repo (so teammates can pick it up) instead of the OS temp dir.
-
 Write a handoff document summarising the current conversation so a fresh agent, or a teammate, can continue the work.
 
 Save it to a `handoffs/` directory in the repo root (create it if it doesn't exist), with a timestamped filename like `handoffs/2026-07-02-1430-short-topic.md`. Keeping it in the shared repo is the point, a teammate on their own machine can pick it up.

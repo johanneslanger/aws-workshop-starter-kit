@@ -5,11 +5,6 @@ description: Break an agreed plan or PRD into independently-grabbable issues usi
 
 # To Issues
 
-> Adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (to-issues),
-> MIT licensed (see `LICENSE` in this folder). Modified for hackathon use:
-> hardcoded a local `issues/` tracker as the default, and stripped the
-> setup-skill dependency, domain-glossary/ADR conventions, and prefactoring step.
-
 Break an agreed plan into **tracer-bullet vertical slices**, each a thin but COMPLETE path through every layer (data, logic, UI, test), demoable on its own. Slices are vertical, not horizontal layers.
 
 By default this writes to a **local tracker**: a folder of markdown files in the current repo. No external issue tracker, no setup, no auth.
@@ -17,7 +12,7 @@ By default this writes to a **local tracker**: a folder of markdown files in the
 ## Process
 
 ### 1. Start from the PRD (or the plan in context)
-If a `PRD.md` exists in the repo root (written by the `to-prd` skill), slice from it, it carries the agreed problem, solution, and key decisions. Otherwise use whatever plan is in the conversation (for example a `grill-me` outcome), or a file path the user passes.
+If a `PRD.md` exists in the repo root (written by the `to-prd` skill), slice from it, it carries the agreed problem, solution, and implementation decisions. Otherwise use whatever plan is in the conversation (for example a `grill-me` outcome), or a file path the user passes.
 
 ### 2. Draft vertical slices
 - Each slice cuts end-to-end through all layers, not one horizontal layer.

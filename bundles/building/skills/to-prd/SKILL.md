@@ -5,11 +5,6 @@ description: Turn the current conversation (e.g. a grill-me session) into a shor
 
 # To PRD
 
-> Adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (to-prd),
-> MIT licensed (see `LICENSE` in this folder). Modified for hackathon use: writes a
-> short PRD to the local repo, and drops the issue-tracker / label / glossary / ADR
-> conventions.
-
 Take the current conversation, usually the outcome of a `grill-me` session, and synthesize it into a short PRD. **Don't interview the user again**, just write up what you already agreed.
 
 ## Process
@@ -28,8 +23,8 @@ The problem you're solving, from the user's perspective.
 ## Solution
 The solution, from the user's perspective. One or two paragraphs.
 
-## Key decisions
-What you settled during grilling: scope, approach, what's explicitly out of scope, tradeoffs you chose. This is the context that keeps the team (and future sessions) aligned.
+## Implementation decisions
+The technical approach settled during grilling: how you'll build it (stack, key components), the seams or interfaces you'll build against (prefer existing ones; fewer is better), what to reuse vs build, and any tradeoffs or explicit non-goals. This is the crucial context each issue inherits, without it, slices drift.
 
 ## User stories
 A numbered list of user stories, each a thin, demoable capability.

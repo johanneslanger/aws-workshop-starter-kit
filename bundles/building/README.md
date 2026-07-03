@@ -35,8 +35,6 @@ A **team** builds something from scratch, with an AI coding agent as an extra pa
 - **to-issues** — slice the PRD into independently-grabbable local issues that reference it
 - **handoff** — write a pickup doc into `handoffs/` so another person or agent continues cleanly
 
-grill-me, to-issues, and handoff are based on / adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). See [`../../NOTICE`](../../NOTICE).
-
 ## Want to add web search to Claude?
 
 Bedrock's Claude Code can't search the web by default, and the pre-wired **AWS Knowledge MCP** only covers AWS docs. If your build also needs the *open* web (library docs, error messages, changelogs), it's a quick optional add-on, see [`../../addons/websearch/`](../../addons/websearch/) (deploys a bit of infra, us-east-1).
