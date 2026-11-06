@@ -1,0 +1,10 @@
+slug: workshop-starter-kit
+title: Workshop starter kit for AI-agent-powered AWS workshops
+status: live
+story: >
+  Run AWS workshops where participants work alongside Claude Code on Bedrock: a guided
+  notebook tutor or a hackathon "building" flow for teams.
+audience: [workshop-participants, enablement]
+runtime_min: 120
+services: [claude-code, bedrock, sagemaker-studio]
+start: see README.md
